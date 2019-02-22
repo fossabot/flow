@@ -1,6 +1,17 @@
 <resources>
+    <!-- main stuff -->
     <string name="app_name">flow</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+
+    <!-- UI/titles -->
+    <string name="title_flow">Flow</string>
+    <string name="title_time_machine">Time machine</string>
+    <string name="title_tools">Tools</string>
+    <string name="title_profile">Profile</string>
+
+    <!-- UI/buttons -->
+    <string name="btn_back">Back</string>
+    <string name="btn_refresh">Refresh</string>
+
+    <!-- UI/errors -->
+    <string name="error_generic">Something went wrong</string>
 </resources>
