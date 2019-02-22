@@ -1,19 +1,14 @@
 package com.ttomovcik.flow;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
+import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.MenuItem;
-import android.widget.TextView;
-
 public class MainActivity extends AppCompatActivity {
-
-    private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -21,14 +16,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                /*
-                case R.id.:
+                case R.id.menu_timeline:
                     return true;
-                case R.id.:
+                case R.id.menu_time_machine:
                     return true;
-                case R.id.:
+                case R.id.menu_tools:
                     return true;
-                    */
+                case R.id.menu_profile:
+                    return true;
             }
             return false;
         }
@@ -39,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
