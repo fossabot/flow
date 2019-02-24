@@ -5,12 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".Flow">
 
-    <TextView
+    <TextView android:id="@+id/fragment_title_flow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fragment_title_margin"
         android:fontFamily="@font/raleway"
         android:text="@string/title_flow"
         android:textSize="@dimen/fragment_title_size" />
+
+    <RelativeLayout android:id="@+id/fragment_container_flow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fragment_title_flow"/>
 
 </RelativeLayout>
