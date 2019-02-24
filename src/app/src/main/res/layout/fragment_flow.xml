@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Flow">
@@ -16,6 +17,51 @@
     <RelativeLayout android:id="@+id/fragment_container_flow"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/fragment_title_flow"/>
+        android:layout_below="@id/fragment_title_flow">
+
+        <RelativeLayout android:id="@+id/fragment_container_flow_block_greeter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/block_greeter_margin">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/fragment_container_flow_block_greeter_profile_image"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_person_outline_black_24dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
+
+            <TextView
+                android:id="@+id/fragment_container_flow_block_greeter_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_title_margin"
+                android:layout_toEndOf="@id/fragment_container_flow_block_greeter_profile_image"
+                android:fontFamily="@font/raleway"
+                android:text="@string/string_placeholder_hello_there"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fragment_container_flow_block_greeter_info_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_alignStart="@id/fragment_container_flow_block_greeter_name"
+                android:layout_below="@id/fragment_container_flow_block_greeter_name"
+                android:text="@string/action_tap_to_change_name_or_pic" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/fragment_container_flow_block_greeter"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/fragment_title_margin"
+            android:layout_marginEnd="@dimen/fragment_title_margin"
+            android:background="@color/colorDividers" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
