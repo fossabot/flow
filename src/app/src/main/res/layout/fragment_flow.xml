@@ -4,14 +4,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Flow">
+    tools:context=".Fragments.Flow">
 
-    <TextView android:id="@+id/fragment_title_flow"
+    <TextView
+        android:id="@+id/fragment_title_flow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fragment_title_margin"
+        android:layout_marginStart="@dimen/fragment_title_margin"
+        android:layout_marginTop="@dimen/fragment_title_margin"
+        android:layout_marginEnd="@dimen/fragment_title_margin"
+        android:layout_marginBottom="@dimen/fragment_title_margin"
         android:fontFamily="@font/raleway"
         android:text="@string/title_flow"
+        android:textColor="@color/colorTextPrimary"
         android:textSize="@dimen/fragment_title_size" />
 
     <RelativeLayout android:id="@+id/fragment_container_flow"
@@ -19,7 +24,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/fragment_title_flow">
 
-        <RelativeLayout android:id="@+id/fragment_container_flow_block_greeter"
+        <RelativeLayout android:id="@+id/flow_ui_block_greeter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/block_greeter_margin">
@@ -27,9 +32,9 @@
                 android:id="@+id/fragment_container_flow_block_greeter_profile_image"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:src="@drawable/ic_person_outline_black_24dp"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#FF000000"/>
+                android:src="@mipmap/ic_launcher"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/colorIcons"/>
 
             <TextView
                 android:id="@+id/fragment_container_flow_block_greeter_name"
@@ -39,6 +44,7 @@
                 android:layout_toEndOf="@id/fragment_container_flow_block_greeter_profile_image"
                 android:fontFamily="@font/raleway"
                 android:text="@string/string_placeholder_hello_there"
+                android:textColor="@color/colorTextPrimary"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -46,21 +52,40 @@
                 android:id="@+id/fragment_container_flow_block_greeter_info_msg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_alignStart="@id/fragment_container_flow_block_greeter_name"
                 android:layout_below="@id/fragment_container_flow_block_greeter_name"
-                android:text="@string/action_tap_to_change_name_or_pic" />
+                android:layout_alignStart="@id/fragment_container_flow_block_greeter_name"
+                android:layout_marginTop="4dp"
+                android:text="@string/action_tap_to_change_name_or_pic"
+                android:textColor="@color/colorTextSecondary" />
         </RelativeLayout>
-
-        <FrameLayout
+        <FrameLayout android:id="@+id/divider_below_greeter"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@id/fragment_container_flow_block_greeter"
+            android:layout_below="@id/flow_ui_block_greeter"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:layout_marginStart="@dimen/fragment_title_margin"
             android:layout_marginEnd="@dimen/fragment_title_margin"
-            android:background="@color/colorDividers" />
+            android:background="@color/colorIcons" />
+
+        <RelativeLayout android:id="@+id/flow_ui_block_recent_pictures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider_below_greeter">
+
+            <TextView
+                android:id="@+id/flow_textView_recentPhotos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_title_margin"
+                android:fontFamily="@font/raleway"
+                android:text="@string/title_flow_recent_photos"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="sans" />
+        </RelativeLayout>
 
     </RelativeLayout>
 

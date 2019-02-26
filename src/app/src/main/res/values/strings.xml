@@ -1,18 +1,20 @@
 <resources>
     <!-- main stuff -->
-    <string name="app_name">flow</string>
+    <string name="app_name">Flow</string>
 
     <!-- UI/titles -->
     <string name="title_flow">Flow</string>
     <string name="title_time_machine">Time machine</string>
     <string name="title_tools">Tools</string>
     <string name="title_profile">Profile</string>
+    <string name="title_flow_recent_photos">Recent photos</string>
+    <string name="title_flow_recent_messages">Messages</string>
 
     <!-- UI/placeholders -->
     <string name="string_placeholder_hello_there">Hello there!</string>
 
     <!-- UI/actions -->
-    <string name="action_tap_to_change_name_or_pic">Tap there to change your\nprofile image or name</string>
+    <string name="action_tap_to_change_name_or_pic">Tap the image to change\nyour profile picture</string>
 
     <!-- UI/buttons -->
     <string name="btn_back">Back</string>

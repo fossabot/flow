@@ -1,10 +1,15 @@
-package com.ttomovcik.flow;
+package com.ttomovcik.flow.Activities;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.ttomovcik.flow.Fragments.Flow;
+import com.ttomovcik.flow.Fragments.Profile;
+import com.ttomovcik.flow.Fragments.TimeMachine;
+import com.ttomovcik.flow.Fragments.Tools;
+import com.ttomovcik.flow.R;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("Core","α - we are running alpha version!");
         setContentView(R.layout.activity_main);
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
