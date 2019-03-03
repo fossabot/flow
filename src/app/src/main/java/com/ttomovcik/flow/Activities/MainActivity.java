@@ -1,6 +1,5 @@
 package com.ttomovcik.flow.Activities;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         // Load the Flow fragment on startup
-        Log.d("onCreate","Initial fragment switch should happen soon");
+        Log.d("Core","Initial fragment switch should happen soon");
         switchFragment(new Flow());
     }
 
@@ -62,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(fragment_container, fragmentName);
         fragmentTransaction.addToBackStack(null);
-        Log.d("switchFragment","Switching to: "+ fragmentName);
+        Log.i("Core","Switching to: "+ fragmentName);
         fragmentTransaction.commit();
     }
 }

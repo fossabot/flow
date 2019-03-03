@@ -14,7 +14,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.google.android.material.button.MaterialButton;
 import com.ttomovcik.flow.R;
 
 import java.util.Objects;
@@ -22,41 +24,73 @@ import java.util.Objects;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-public class Flow extends Fragment {
+public class Flow extends Fragment
+{
 
-    public Flow() {
+    public Flow()
+    {
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_flow, container, false);
+                             Bundle savedInstanceState)
+    {
+        final View view = inflater.inflate(R.layout.fragment_flow, container, false);
 
         SharedPreferences settings = Objects.requireNonNull(getActivity())
                 .getSharedPreferences("UserInfo", 0);
 
-        // Init some stuff here-and-there
         de.hdodenhof.circleimageview.CircleImageView userInfo_profilePicture
-                = view.findViewById(R.id.fragment_container_flow_block_greeter_profile_image);
+                = view.findViewById(R.id.textView_flowFragment_greeter);
+        TextView textView_greeter_name = view.findViewById(R.id.textView_flowFragment_greeter_name);
+        MaterialButton materialButtonShowPicturesAll
+                = view.findViewById(R.id.button_flowFragment_action_showPhotosAll);
 
-        Log.d("Test", settings.getString("profile_profileImage", ""));
-        if (Objects.requireNonNull(settings.getString("profile_profileImage", "")).contains(".")) {
+        if (Objects.requireNonNull(settings.getString("profile_profileImage", "")).contains("."))
+        {
+            Log.i("Flow", "Setting up profile picture from file: "
+                    + settings.getString("profile_profileImage", ""));
             userInfo_profilePicture.setImageDrawable(
                     Drawable.createFromPath(settings.getString("profile_profileImage", "")));
         }
 
-        // onClickListeners
-        userInfo_profilePicture.setOnClickListener(new View.OnClickListener() {
+        userInfo_profilePicture.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 pickImageFromGallery();
+            }
+        });
+        textView_greeter_name.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                /*
+                * TODO (1): Store user's name and show "Hello, {name}!", if already set.
+                * Also, hide the hint informing that they can setup their profile.
+                */
+                Log.d("Flow", "Hello there!");
+            }
+        });
+        materialButtonShowPicturesAll.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         });
         return view;
     }
 
-    private void pickImageFromGallery() {
+    private void pickImageFromGallery()
+    {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         String[] mimeTypes = {"image/jpeg", "image/png"};
@@ -66,14 +100,17 @@ public class Flow extends Fragment {
 
     public void onActivityResult(int requestCode,
                                  int resultCode,
-                                 Intent data) {
+                                 Intent data)
+    {
         SharedPreferences settings = Objects.requireNonNull(getActivity())
                 .getSharedPreferences("UserInfo", 0);
         if (resultCode == Activity.RESULT_OK)
-            switch (requestCode) {
+            switch (requestCode)
+            {
                 case 100:
                     Uri selectedImage = data.getData();
                     assert selectedImage != null;
+                    Log.i("Flow", "Saving profile image path: " + selectedImage);
                     String[] filePathColumn = {MediaStore.Images.Media.DATA};
                     Cursor cursor = Objects.requireNonNull(getActivity())
                             .getContentResolver()
@@ -91,7 +128,8 @@ public class Flow extends Fragment {
                     editor.apply();
                     ImageView imageView_profilePicture
                             = Objects.requireNonNull(getView())
-                            .findViewById(R.id.fragment_container_flow_block_greeter_profile_image);
+                            .findViewById(R.id.textView_flowFragment_greeter);
+                    Log.i("Flow", "Setting up profile picture from file: " + decodedImageFilename);
                     imageView_profilePicture.setImageBitmap(BitmapFactory.decodeFile(decodedImageFilename));
                     break;
             }
