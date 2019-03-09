@@ -13,8 +13,4 @@
         android:title="@string/title_tools"
         android:icon="@drawable/ic_phonelink_setup_black_24dp"/>
 
-    <item android:id="@+id/menu_profile"
-        android:title="@string/title_profile"
-        android:icon="@drawable/ic_person_outline_black_24dp"/>
-
 </menu>

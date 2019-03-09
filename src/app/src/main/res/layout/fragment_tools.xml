@@ -5,12 +5,4 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.Tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fragment_title_margin"
-        android:fontFamily="@font/raleway"
-        android:text="@string/title_tools"
-        android:textSize="@dimen/fragment_title_size" />
-
 </RelativeLayout>

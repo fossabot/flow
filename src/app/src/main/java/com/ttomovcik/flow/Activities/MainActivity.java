@@ -1,5 +1,6 @@
 package com.ttomovcik.flow.Activities;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -15,17 +16,23 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import de.hdodenhof.circleimageview.BuildConfig;
 
 import static com.ttomovcik.flow.R.id.fragment_container;
 
-public class MainActivity extends AppCompatActivity {
+@SuppressWarnings("ConstantConditions")
+public class MainActivity extends AppCompatActivity
+{
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+            = new BottomNavigationView.OnNavigationItemSelectedListener()
+    {
 
         @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
+        public boolean onNavigationItemSelected(@NonNull MenuItem item)
+        {
+            switch (item.getItemId())
+            {
                 case R.id.menu_timeline:
                     switchFragment(new Flow());
                     return true;
@@ -35,33 +42,57 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.menu_tools:
                     switchFragment(new Tools());
                     return true;
-                case R.id.menu_profile:
-                    switchFragment(new Profile());
-                    return true;
             }
             return false;
         }
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        Log.d("Core","α - we are running alpha version!");
+        checkFirstTimeRun();
+        // TODO (5): Update onCreateView in fragments with 'return view;'
         setContentView(R.layout.activity_main);
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        // Load the Flow fragment on startup
-        Log.d("Core","Initial fragment switch should happen soon");
-        switchFragment(new Flow());
     }
 
-    private void switchFragment (Fragment fragmentName) {
+    private void switchFragment(Fragment fragmentName)
+    {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(fragment_container, fragmentName);
         fragmentTransaction.addToBackStack(null);
-        Log.i("Core","Switching to: "+ fragmentName);
         fragmentTransaction.commit();
+    }
+
+    private void checkFirstTimeRun()
+    {
+        final String PREFS_NAME = "flowConfig";
+        final String PREF_VERSION_CODE_KEY = "version_code";
+        final int DOES_NOT_EXIST = -1;
+        int currentVersionCode = BuildConfig.VERSION_CODE;
+
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        int savedVersionCode = sharedPreferences.getInt(PREF_VERSION_CODE_KEY, DOES_NOT_EXIST);
+
+        if (savedVersionCode == DOES_NOT_EXIST)
+        {
+            // Cleared settings or fresh install
+            Log.d("checkFirstTimeRun", "We are running for the first time");
+            // TODO: Open intro activity
+        }
+        else if (currentVersionCode > savedVersionCode)
+        {
+            // Application upgrade
+            return;
+        }
+        else if (currentVersionCode == savedVersionCode)
+        {
+            // Normal run
+            return;
+        }
+        sharedPreferences.edit().putInt(PREF_VERSION_CODE_KEY, currentVersionCode).apply();
     }
 }

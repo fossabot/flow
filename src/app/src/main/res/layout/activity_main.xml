@@ -7,6 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity">
 
+    <!--
+        TODO (2): Modify strings
+        TODO (3): Add fragment headers with titles
+        TODO (4,5): Modify colors and update UI (eye-burning white and blue (proto in Xd))
+    -->
+
     <FrameLayout android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
