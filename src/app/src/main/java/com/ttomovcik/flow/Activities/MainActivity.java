@@ -7,8 +7,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ttomovcik.flow.Fragments.Flow;
-import com.ttomovcik.flow.Fragments.Profile;
-import com.ttomovcik.flow.Fragments.TimeMachine;
+import com.ttomovcik.flow.Fragments.History;
 import com.ttomovcik.flow.Fragments.Tools;
 import com.ttomovcik.flow.R;
 
@@ -33,13 +32,13 @@ public class MainActivity extends AppCompatActivity
         {
             switch (item.getItemId())
             {
-                case R.id.menu_timeline:
+                case R.id.nav_flow:
                     switchFragment(new Flow());
                     return true;
-                case R.id.menu_time_machine:
-                    switchFragment(new TimeMachine());
+                case R.id.nav_history:
+                    switchFragment(new History());
                     return true;
-                case R.id.menu_tools:
+                case R.id.nav_tools:
                     switchFragment(new Tools());
                     return true;
             }

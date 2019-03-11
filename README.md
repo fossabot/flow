@@ -5,7 +5,7 @@ Modern dashboard for Android devices
 ## Development progress
 |Status|Ongoing|Planned|Done|Ongoing|Planned|Done|
 |-|-|-|-|-|-|-|
-|<b>Feature</b><td colspan=3><p style="text-align: center;">Core</p><td colspan=3><p style="text-align: center;">UI</p>
+|<b>Feature</b><td colspan=3><p style="text-align: center;">Core</p><td colspan=3><p style="text-align: center;">UI</p>|
 |Theming||||✔|||
 |Main UI||||✔|||
 |Intro page|||||✔||

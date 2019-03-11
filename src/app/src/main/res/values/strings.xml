@@ -2,28 +2,21 @@
     <!-- main stuff -->
     <string name="app_name">Flow</string>
 
-    <!-- UI/titles -->
+    <!-- Titles and stuff -->
     <string name="title_flow">Flow</string>
-    <string name="title_time_machine">Time machine</string>
+    <string name="title_history">History</string>
     <string name="title_tools">Tools</string>
     <string name="title_profile">Profile</string>
-    <string name="title_flow_recent_photos">Recent photos</string>
-    <string name="title_flow_recent_messages">Messages</string>
 
-    <!-- UI/placeholders -->
-    <string name="string_placeholder_hello_there">Hello there!</string>
+    <!-- Buttons -->
+    <string name="btn_lets_start">Let\'s start</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_allow_perms">Allow</string>
 
-    <!-- UI/actions -->
-    <string name="action_tap_to_change_name_or_pic">Tap the image to change\nyour picture or name</string>
-
-    <!-- UI/buttons -->
-    <string name="btn_back">Back</string>
-    <string name="btn_refresh">Refresh</string>
-    <string name="btn_showAll">Show all</string>
-
-    <!-- UI/errors -->
-    <string name="error_generic">Something went wrong</string>
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- UI Text and such -->
+    <string name="hello_blank_fragment">Yay! There\'s something missing, isn\'t it?</string>
+    <string name="intro_greeter">Welcome to flow!\nDashboard for your Android device.</string>
+    <string name="intro_one_more_step">One more step</string>
+    <string name="intro_perms_hero">Before we continue, we\'ll need few permissions</string>
 
 </resources>

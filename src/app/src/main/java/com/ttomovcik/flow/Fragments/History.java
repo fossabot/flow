@@ -2,30 +2,32 @@ package com.ttomovcik.flow.Fragments;
 
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.ttomovcik.flow.R;
 
+import androidx.fragment.app.Fragment;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TimeMachine extends Fragment {
+public class History extends Fragment
+{
 
 
-    public TimeMachine() {
+    public History()
+    {
         // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_time_machine, container, false);
     }

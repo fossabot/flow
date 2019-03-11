@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/menu_timeline"
-        android:title="@string/title_flow"
-        android:icon="@drawable/ic_timeline_black_24dp"/>
+    <item
+        android:id="@+id/nav_flow"
+        android:icon="@drawable/ic_timeline_black_24dp"
+        android:title="@string/title_flow" />
 
-    <item android:id="@+id/menu_time_machine"
-        android:title="@string/title_time_machine"
-        android:icon="@drawable/ic_settings_backup_restore_black_24dp"/>
+    <item
+        android:id="@+id/nav_history"
+        android:icon="@drawable/ic_settings_backup_restore_black_24dp"
+        android:title="@string/title_history" />
 
-    <item android:id="@+id/menu_tools"
-        android:title="@string/title_tools"
-        android:icon="@drawable/ic_phonelink_setup_black_24dp"/>
+    <item
+        android:id="@+id/nav_tools"
+        android:icon="@drawable/ic_phonelink_setup_black_24dp"
+        android:title="@string/title_tools" />
 
 </menu>
