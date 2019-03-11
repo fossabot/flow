@@ -2,6 +2,11 @@
 
 Modern dashboard for Android devices
 
+## Development progress
+- [x] FTR check
+- [x] Basic light colour scheme and UI layout
+- [ ] Literally anything that will make this app useful
+
 ## Getting Started
 
 There isn't any getting started for now. Wait, you can still build from sources and try this app out.
