@@ -2,6 +2,18 @@
 
 Modern dashboard for Android devices
 
+## Development progress
+|Status|Ongoing|Planned|Done|Ongoing|Planned|Done|
+| -
+|<b >Feature</b><td colspan=3><p style="text-align: center;">Core</p><td colspan=3><p style="text-align: center;">UI</p>
+|Theming||||✔|||
+|Main UI||||✔|||
+|Intro page|||||✔||
+|FTR check|||✔||||
+|Permissions||✔|||||
+|Login||✔|||||
+
+
 ## Getting Started
 
 There isn't any getting started for now. Wait, you can still build from sources and try this app out.
