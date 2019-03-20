@@ -1,4 +1,6 @@
 # flow
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fttomovcik%2Fflow.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fttomovcik%2Fflow?ref=badge_shield)
+
 
 Modern dashboard for Android devices
 
@@ -33,3 +35,6 @@ See also the list of [CONTRIBUTORS.md](https://github.com/your/project/contribut
 ## License
 
 This project is licensed under the Apache 2.0 License - see the [LICENSE.md](LICENSE.md) file for details
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fttomovcik%2Fflow.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fttomovcik%2Fflow?ref=badge_large)
